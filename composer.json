@@ -23,13 +23,6 @@
         "email": "c.faishal.amrullah@gmail.com"
     }],
     "minimum-stability": "dev",
-    "version": "v1.0.0",
-    "prefer-stable": true,
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Ax7Cmd\\Sumsub\\SumsubServiceProvider"
-            ]
-        }
-    }
+    "version": "v1.0.1",
+    "prefer-stable": true
 }
