@@ -1,0 +1,35 @@
+{
+    "name": "ax7-cmd/sumsub",
+    "description": "Sumsub PHP SDK",
+    "keywords": [
+        "sumsub",
+        "sumsub.com",
+        "sdk",
+        "laravel",
+        "ax7-cmd"
+    ],
+    "type": "laravel-package",
+    "license": "MIT",
+    "require": {
+        "guzzlehttp/guzzle": "^7.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ax7Cmd\\Sumsub\\": "src/"
+        }
+    },
+    "authors": [{
+        "name": "Ax7-cmd",
+        "email": "c.faishal.amrullah@gmail.com"
+    }],
+    "minimum-stability": "dev",
+    "version": "v1.0.0",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ax7Cmd\\Sumsub\\SumsubServiceProvider"
+            ]
+        }
+    }
+}
