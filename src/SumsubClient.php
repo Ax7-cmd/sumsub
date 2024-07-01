@@ -98,6 +98,41 @@ class SumsubClient
     }
 
     /**
+     * https://docs.sumsub.com/reference/get-applicant-data
+     *
+     * @param string $applicantId
+     * @throws RuntimeException
+     * @return array
+     */
+    public function getApplicantData(string $applicantId): array
+    {
+        $url = '/resources/applicants/' . urlencode($applicantId) . '/one';
+        $request = new GuzzleHttp\Psr7\Request('GET', $url);
+
+        $response = $this->sendRequest($request);
+        return $this->parseBody($response);
+    }
+
+    /**
+     * https://docs.sumsub.com/reference/get-document-images
+     *
+     * @param string $applicantId
+     * @throws RuntimeException
+     * @return array
+     */
+    public function getDocumentImage(string $inspectionId, string $imageId)
+    {
+        $url = '/resources/inspections/' . urlencode($inspectionId) . '/resources/' . urlencode($imageId);
+        $request = new GuzzleHttp\Psr7\Request('GET', $url);
+
+        $response = $this->sendRequest($request);
+        $base64 = base64_encode($response->getBody()->getContents());
+
+        // return base64 image
+        return $base64;
+    }
+
+    /**
      * https://developers.sumsub.com/api-reference/#access-tokens-for-sdks
      *
      * @param string $externalUserId
