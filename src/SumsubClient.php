@@ -48,6 +48,22 @@ class SumsubClient
     }
 
     /**
+     * https://docs.sumsub.com/reference/reset-applicant
+     *
+     * @param string $applicantId
+     * @throws RuntimeException
+     * @return string ok
+     */
+    public function resetApplicantProfile(string $applicantId): array
+    {
+        $url = '/resources/applicants/' . urlencode($applicantId) . '/reset';
+        $request = new GuzzleHttp\Psr7\Request('POST', $url);
+
+        $response = $this->sendRequest($request);
+        return $this->parseBody($response);
+    }
+
+    /**
      * https://developers.sumsub.com/api-reference/#adding-an-id-document
      *
      * @param string $applicantId
