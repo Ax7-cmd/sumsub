@@ -23,6 +23,6 @@
         "email": "c.faishal.amrullah@gmail.com"
     }],
     "minimum-stability": "dev",
-    "version": "v1.0.3",
+    "version": "v1.0.4",
     "prefer-stable": true
 }
